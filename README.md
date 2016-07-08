@@ -1,4 +1,4 @@
-# sales-taxes-app
+# sales-taxes
 Sales taxes calculation problem solution
 
 PROBLEM: SALES TAXES
