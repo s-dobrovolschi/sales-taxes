@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<!-- Order input 1 -->
+	<bean id="orderInput1" class="it.company.salestaxes.model.ShoppingCart">
+		<property name="productList">
+			<list value-type="it.company.salestaxes.model.BaseProduct">
+				<ref bean="order1-Book" />
+				<ref bean="order1-MusicCD" />
+				<ref bean="order1-ChocolateBar" />
+			</list>
+		</property>
+	</bean>
+	<bean id="order1-Book" class="it.company.salestaxes.model.BookProduct">
+		<property name="name" value="book" />
+		<property name="price" value="12.49"/>
+		<property name="imported" value="false" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<bean id="order1-MusicCD" class="it.company.salestaxes.model.GenericProduct">
+		<property name="name" value="music CD" />
+		<property name="price" value="14.99" />
+		<property name="imported" value="false" />
+		<property name="quantity" value="1" />
+	</bean>
+	<bean id="order1-ChocolateBar" class="it.company.salestaxes.model.FoodProduct">
+		<property name="name" value="chocolate bar" />
+		<property name="price" value="0.85" />
+		<property name="imported" value="false" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<!-- Order input 2 -->
+	<bean id="orderInput2" class="it.company.salestaxes.model.ShoppingCart">
+		<property name="productList">
+			<util:list value-type="it.company.salestaxes.model.BaseProduct">
+				<ref bean="order2-BoxOfChocolates" />
+				<ref bean="order2-BottleOfPerfume" />
+			</util:list>
+		</property>
+	</bean>
+	<bean id="order2-BoxOfChocolates" class="it.company.salestaxes.model.FoodProduct">
+		<property name="name" value="box of chocolates" />
+		<property name="price" value="10.00" />
+		<property name="imported" value="true" />
+		<property name="quantity" value="1" />
+	</bean>
+	<bean id="order2-BottleOfPerfume" class="it.company.salestaxes.model.GenericProduct">
+		<property name="name" value="bottle of perfume" />
+		<property name="price" value="47.50" />
+		<property name="imported" value="true" />
+		<property name="quantity" value="1" />
+	</bean>
+
+	<!-- Order input 3 -->
+	<bean id="orderInput3" class="it.company.salestaxes.model.ShoppingCart">
+		<property name="productList">
+			<util:list value-type="it.company.salestaxes.model.BaseProduct">
+				<ref bean="order3-ImportedBottleOfPerfume" />
+				<ref bean="order3-LocalBottleOfPerfume" />
+				<ref bean="order3-HeadachePills" />
+				<ref bean="order3-BoxOfChocolates" />
+			</util:list>
+		</property>
+	</bean>
+	<bean id="order3-ImportedBottleOfPerfume" class="it.company.salestaxes.model.GenericProduct">
+		<property name="name" value="bottle of perfume" />
+		<property name="price" value="27.99" />
+		<property name="imported" value="true" />
+		<property name="quantity" value="1" />
+	</bean>
+	<bean id="order3-LocalBottleOfPerfume" class="it.company.salestaxes.model.GenericProduct">
+		<property name="name" value="bottle of perfume" />
+		<property name="price" value="18.99" />
+		<property name="imported" value="false" />
+		<property name="quantity" value="1" />
+	</bean>
+	<bean id="order3-HeadachePills" class="it.company.salestaxes.model.MedicalProduct">
+		<property name="name" value="packet of headache pills" />
+		<property name="price" value="9.75" />
+		<property name="imported" value="false" />
+		<property name="quantity" value="1" />
+	</bean>
+	<bean id="order3-BoxOfChocolates" class="it.company.salestaxes.model.FoodProduct">
+		<property name="name" value="box of chocolates" />
+		<property name="price" value="11.25" />
+		<property name="imported" value="true" />
+		<property name="quantity" value="1" />
+	</bean>
+</beans>
